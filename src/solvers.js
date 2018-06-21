@@ -18,6 +18,16 @@
 window.findNRooksSolution = function(n) {
   var solution = undefined; //fixme
 
+  //I: number
+  //O: matrix (nested array)
+  //C: none
+  //E: none
+
+  //create the nxn block
+  var board = new Board({n:n});
+
+
+
   console.log('Single solution for ' + n + ' rooks:', JSON.stringify(solution));
   return solution;
 };
