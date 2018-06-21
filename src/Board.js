@@ -149,13 +149,16 @@
     //
     // test if a specific major diagonal on this board contains a conflict
     hasMajorDiagonalConflictAt: function(majorDiagonalColumnIndexAtFirstRow) {
+      //debugger;
       var counter = 0;
       var key = 0;
       for (var i = majorDiagonalColumnIndexAtFirstRow; i < this.attributes[0].length; i++) {
-        if (this.attributes[key++][i] === 1) {
-          counter++;
-          if (counter > 1) {
-            return true;
+        if (key < this.attributes[0].length) {
+          if (this.attributes[key++][i] === 1) {
+            counter++;
+            if (counter > 1) {
+              return true;
+            }
           }
         }    
       }
@@ -198,12 +201,14 @@
       var counter = 0;
       var key = 0;
       for (var i = minorDiagonalColumnIndexAtFirstRow; i > -1; i--) {
-        if (this.attributes[key++][i] === 1) {
-          counter++;
-          if (counter > 1) {
-            return true;
-          }
-        }    
+        if (key < this.attributes[0].length) {
+          if (this.attributes[key++][i] === 1) {
+            counter++;
+            if (counter > 1) {
+              return true;
+            }
+          }    
+        }
       }
       return false;
     },

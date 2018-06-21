@@ -24,7 +24,7 @@ window.findNRooksSolution = function(n) {
   //E: none
 
   //create the nxn block
-  var board = new Board({n:n});
+  // var board = new Board({n:n});
 
 
 
